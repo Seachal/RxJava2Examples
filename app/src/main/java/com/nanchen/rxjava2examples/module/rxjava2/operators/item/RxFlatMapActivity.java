@@ -6,7 +6,6 @@ import com.nanchen.rxjava2examples.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -48,6 +47,8 @@ public class RxFlatMapActivity extends RxOperatorBaseActivity {
                 e.onNext(1);
                 e.onNext(2);
                 e.onNext(3);
+                e.onNext(4);
+                e.onNext(5);
             }
         }).flatMap(new Function<Integer, ObservableSource<String>>() {
             @Override
@@ -57,7 +58,9 @@ public class RxFlatMapActivity extends RxOperatorBaseActivity {
                     list.add("I am value " + integer);
                 }
                 int delayTime = (int) (1 + Math.random() * 10);
-                return Observable.fromIterable(list).delay(delayTime, TimeUnit.MILLISECONDS);
+//                return Observable.fromIterable(list).delay(delayTime, TimeUnit.MILLISECONDS);
+//            seachal annotation:  输入（onNext）作为输出（return）
+                return Observable.fromIterable(list);
             }
         }).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -38,7 +38,7 @@ public class RxZipActivity extends RxOperatorBaseActivity {
         Observable.zip(getStringObservable(), getIntegerObservable(), new BiFunction<String, Integer, String>() {
             @Override
             public String apply(@NonNull String s, @NonNull Integer integer) throws Exception {
-//                s
+//            seachal annotation：  zip把两个源中得到的结果都放在apply，开发者再根据自己的需求修改 return，
                 return s + integer;
             }
         }).subscribe(new Consumer<String>() {

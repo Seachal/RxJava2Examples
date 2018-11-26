@@ -28,7 +28,7 @@ public class RxMergeActivity extends RxOperatorBaseActivity {
 
     @Override
     protected void doSomething() {
-        Observable.merge(Observable.just(1, 2), Observable.just(3, 4, 5))
+        Observable.merge(Observable.just(1, 3), Observable.just(4, 2, 5))
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
