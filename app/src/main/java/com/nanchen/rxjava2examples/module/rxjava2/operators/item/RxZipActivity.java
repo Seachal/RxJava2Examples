@@ -38,6 +38,7 @@ public class RxZipActivity extends RxOperatorBaseActivity {
         Observable.zip(getStringObservable(), getIntegerObservable(), new BiFunction<String, Integer, String>() {
             @Override
             public String apply(@NonNull String s, @NonNull Integer integer) throws Exception {
+//                s
                 return s + integer;
             }
         }).subscribe(new Consumer<String>() {
