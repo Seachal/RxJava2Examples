@@ -59,7 +59,7 @@ public class RxFlatMapActivity extends RxOperatorBaseActivity {
                 }
                 int delayTime = (int) (1 + Math.random() * 10);
 //                return Observable.fromIterable(list).delay(delayTime, TimeUnit.MILLISECONDS);
-//            seachal annotation:  输入（onNext）作为输出（return）
+//            seachal annotation:  输入（onNext）作为输出另一个的输入（）
                 return Observable.fromIterable(list);
             }
         }).subscribeOn(Schedulers.newThread())
